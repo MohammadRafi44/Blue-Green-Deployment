@@ -17,10 +17,12 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-                git branch: 'main', credentialsId: 'git-cred', url: 'https://github.com/jaiswaladi246/3-Tier-NodeJS-MySql-Docker.git'
+                git branch: 'main', url: 'https://github.com/MohammadRafi44/Blue-Green-Deployment.git'
+                //git branch: 'main', credentialsId: 'git-cred', url: 'https://github.com/jaiswaladi246/3-Tier-NodeJS-MySql-Docker.git'
             }
         }
         
+        stage()
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('sonar') {
