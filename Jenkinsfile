@@ -97,10 +97,10 @@ pipeline {
                 script {
                     withDockerRegistry(credentialsId: 'docker-cred') {
                     sh "docker push ${IMAGE_NAME}:${TAG}"
+                    }
                 }
             }
         }
-
         stage('Deploy MySQL Deployment and Service') {
             steps {
                 script {
@@ -174,5 +174,4 @@ pipeline {
             }
         }
     }
-}
 }
